@@ -1,3 +1,4 @@
+//Interfaz que nos permitirá borrar por clave, insertar o borrar
 package org.planificando.server.dao;
 
 import java.util.List;

@@ -1,3 +1,6 @@
+//Sirve para definir el formato de los mensajes a transmitir (Json)
+//Así como a las operaciones
+
 package org.planificando.client.datasource;
 
 import com.smartgwt.client.data.DSRequest;
@@ -15,9 +18,14 @@ public class JSONRestDataSource extends RestDataSource
 	{
 		super();
 
+		//OperationBinding define como realizar las operaciones de fetch (recogida), add
+		//update y remove en una fuente de datos
+		//DSProtocol define como serán enviados los datos, en este ejemplo todo se realizará a través de POST
+		
+		//En este caso para traer datos
 		OperationBinding fetch = new OperationBinding();
-		fetch.setOperationType(DSOperationType.FETCH);
-		fetch.setDataProtocol(DSProtocol.POSTMESSAGE);
+		fetch.setOperationType(DSOperationType.FETCH);		//Definimos la operación como fetch
+		fetch.setDataProtocol(DSProtocol.POSTMESSAGE);		
 
 		OperationBinding add = new OperationBinding();
 		add.setOperationType(DSOperationType.ADD);
@@ -31,14 +39,14 @@ public class JSONRestDataSource extends RestDataSource
 		remove.setOperationType(DSOperationType.REMOVE);
 		remove.setDataProtocol(DSProtocol.POSTMESSAGE);
 
-		setOperationBindings(fetch, add, update, remove);
-		setDataFormat(DSDataFormat.JSON);
+		setOperationBindings(fetch, add, update, remove);	//indicamos las operaciones con los datos
+		setDataFormat(DSDataFormat.JSON);					//enviaremos en formato json
 	}
 
 	@Override
 	protected Object transformRequest(DSRequest dsRequest)
 	{
-		dsRequest.setContentType("application/json");
+		dsRequest.setContentType("application/json");		//La petición se hace a través de json
 		dsRequest.setAttribute("dataFormat", "json");
 		return JSON.encode(dsRequest.getData());
 	}

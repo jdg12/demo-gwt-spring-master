@@ -1,3 +1,4 @@
+//Implementación de la interfaz UserService
 package org.planificando.server.service.impl;
 
 import org.json.simple.JSONObject;
@@ -24,6 +25,7 @@ public class UserServiceImpl implements UserService
 
 		try
 		{
+			//Intentamos crear un objeto JSON a través de la cadena pasada
 			JSONObject jsonObject = (JSONObject) new JSONParser().parse(json);
 		}
 		catch (ParseException e)

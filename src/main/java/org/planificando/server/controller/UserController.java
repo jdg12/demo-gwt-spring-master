@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController
 {
 	@Autowired
-	private UserService userService;
+	private UserService userService;		//Spring se encargará de este atributo
 
 	@RequestMapping(value = "/fetch", method = RequestMethod.POST)
 	public @ResponseBody String fetchUserPost(@RequestBody String json)
 	{
+		//Coje una determinada petición en String y genera un String de respuesta de tipo UserService
 		return userService.fetchUsers(json);
 	}
 

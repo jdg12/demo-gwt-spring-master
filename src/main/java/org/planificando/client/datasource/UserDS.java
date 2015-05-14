@@ -1,3 +1,6 @@
+//Esta clase sirve para establecer el formato de los diferentes campos
+//Asi como las URL tanto al enviar como al recibir datos
+
 package org.planificando.client.datasource;
 
 import com.smartgwt.client.data.fields.DataSourceBooleanField;
@@ -8,7 +11,8 @@ import com.smartgwt.client.data.fields.DataSourceTextField;
 
 public class UserDS extends JSONRestDataSource
 {
-	private static final String FETCH_URL = "UserController/fetch";
+	//Formato de las URL cuando estemos realizando operaciones
+	private static final String FETCH_URL = "UserController/fetch";		
 
 	private static final String SAVE_URL = "UserController/save";
 
@@ -16,11 +20,21 @@ public class UserDS extends JSONRestDataSource
 
 	public UserDS()
 	{
+		//Fuentes de datos
+		
+		//La primera de tipo entero para el código de usuario
 		DataSourceIntegerField codUser = new DataSourceIntegerField("codUser");
 
+		//Fuente de texto puesto que es un nick
 		DataSourceTextField nick = new DataSourceTextField("nick", "Nick");
+		
+		//Contraseá puesto que es lo que es
 		DataSourcePasswordField pass = new DataSourcePasswordField("pass", "Password");
+		
+		//El email se tratará como un texto
 		DataSourceTextField email = new DataSourceTextField("email", "E-mail");
+		
+		//Baneado como un boolean
 		DataSourceBooleanField banned = new DataSourceBooleanField("banned", "Banned");
 
 		DataSourceDateTimeField registered = new DataSourceDateTimeField("registered", "Registered");
@@ -28,16 +42,16 @@ public class UserDS extends JSONRestDataSource
 		DataSourceTextField username = new DataSourceTextField("username", "Name");
 		DataSourceTextField surname = new DataSourceTextField("surname", "Surname");
 
-		codUser.setHidden(true);
-		codUser.setPrimaryKey(true);
+		codUser.setHidden(true);			//ocutamos la posibilidad de poner el código de usuario
+		codUser.setPrimaryKey(true);		//indicamos que en todos los datos solo permitiremos un único valor
 
-		nick.setRequired(true);
+		nick.setRequired(true);				//Obligaotio poner nick, contraseña y email
 		pass.setRequired(true);
 		email.setRequired(true);
 
-		registered.setCanEdit(false);
+		registered.setCanEdit(false);		//La fecha no se puede modiciar
 
-		setFetchDataURL(FETCH_URL);
+		setFetchDataURL(FETCH_URL);			//Establecemos las url
 		setAddDataURL(SAVE_URL);
 		setRemoveDataURL(REMOVE_URL);
 		setUpdateDataURL(SAVE_URL);

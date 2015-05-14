@@ -3,7 +3,6 @@
 <mapper namespace="org.planificando.server.dao">
 	<resultMap id="BaseResultMap" type="org.planificando.server.model.User">
 		<id column="cod_user" property="codUser" jdbcType="BIGINT" />
-
 		<result column="nick" property="nick" jdbcType="VARCHAR" />
 		<result column="pass" property="pass" jdbcType="VARCHAR" />
 		<result column="email" property="email" jdbcType="VARCHAR" />

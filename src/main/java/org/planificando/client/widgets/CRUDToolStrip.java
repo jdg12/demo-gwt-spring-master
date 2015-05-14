@@ -1,3 +1,4 @@
+//Clase donde se indican que realizarán los botones SOBRE LA LISTA
 package org.planificando.client.widgets;
 
 import com.smartgwt.client.widgets.events.ClickEvent;

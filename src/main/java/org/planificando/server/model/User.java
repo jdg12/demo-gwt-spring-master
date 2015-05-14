@@ -1,3 +1,4 @@
+//Clase que representa a un usuario
 package org.planificando.server.model;
 
 import java.util.Date;

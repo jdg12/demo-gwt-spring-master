@@ -1,3 +1,4 @@
+//Interfaz que nos permitirá añadir, recoger o eliminar usuarios a partir de información de JSON
 package org.planificando.server.service;
 
 public interface UserService
