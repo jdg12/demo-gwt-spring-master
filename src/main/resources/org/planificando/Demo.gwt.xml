@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module>
+<module rename-to='Demo'>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+
+	<inherits name="com.smartgwt.SmartGwtNoScript" />
+	<inherits name="com.smartgwt.DrawingNoScript" />
+	<inherits name="com.smartgwt.tools.SmartGwtTools" />
+
+
+<!-- Seleccionar el motor de nuestro explorador para evitar permutaciones al compilar -->
+	<!-- <set-property name="user.agent" value="ie6"/> -->
+	<!-- <set-property name="user.agent" value="ie8"/> -->
+	<set-property name="user.agent" value="safari" />
+	<!-- <set-property name="user.agent" value="gecko1_8" /> -->
+	<!-- <set-property name="user.agent" value="opera"/> -->
+
+	<entry-point class='org.planificando.client.Demo' />
+
+	<source path='client' />
+	<source path='shared' />
+</module>
