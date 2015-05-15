@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+//Para que lo gestione pring
 @Controller
-@RequestMapping("/UserController")
+@RequestMapping("/UserController")		//Definimos la URL, se suele tener una URL por cada controlador
 public class UserController
 {
 	@Autowired
